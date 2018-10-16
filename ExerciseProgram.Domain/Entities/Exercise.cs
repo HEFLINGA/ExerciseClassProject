@@ -8,10 +8,10 @@ namespace ExerciseProgram.Domain.Entities
 {
     public class Exercise
     {
-        public int ExerciseID { get; set; }
-        public string ExerciseName { get; set; }
-        public string ExerciseDescription { get; set; }
-        public int ExerciseMax { get; set; }
-        public int CategoryID { get; set; }
+        public int exerciseID { get; set; }
+        public string exerciseName { get; set; }
+        public string exerciseDesc { get; set; }
+        public int exerciseMax { get; set; }
+        public int catID { get; set; }
     }
 }

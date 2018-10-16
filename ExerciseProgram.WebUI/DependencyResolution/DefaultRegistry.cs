@@ -19,6 +19,8 @@ namespace ExerciseProgram.WebUI.DependencyResolution {
     using StructureMap;
     using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
+    using ExerciseProgram.Domain.Abstract;
+    using ExerciseProgram.Domain.Concrete;
 	
     public class DefaultRegistry : Registry {
         #region Constructors and Destructors
@@ -30,6 +32,7 @@ namespace ExerciseProgram.WebUI.DependencyResolution {
                     scan.WithDefaultConventions();
 					scan.With(new ControllerConvention());
                 });
+            For<IExerciseRepository>().Use<EFExerciseRepository>();
             //For<IExample>().Use<Example>();
         }
 
