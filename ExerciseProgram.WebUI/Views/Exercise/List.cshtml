@@ -1,0 +1,13 @@
+﻿@using ExerciseProgram.Domain.Entities
+@model IEnumerable<Exercise>
+@{ 
+    ViewBag.Title = "Exercises";
+}
+@foreach (var e in Model)
+{
+    <div>
+        <h3>@e.ExerciseName</h3>
+        @e.ExerciseDescription
+        <h4>@e.ExerciseMax</h4>
+    </div>
+}
