@@ -1,9 +1,8 @@
-﻿@using ExerciseProgram.Domain.Entities
-@model IEnumerable<Exercise>
+﻿@model ExerciseProgram.WebUI.Models.ExerciseListViewModel
 @{ 
     ViewBag.Title = "Exercises";
 }
-@foreach (var e in Model)
+@foreach (var e in Model.Exercises)
 {
     <div>
         <h3>@e.exerciseName</h3>
@@ -11,3 +10,7 @@
         <h4>@e.exerciseMax</h4>
     </div>
 }
+
+<div>
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+</div>
