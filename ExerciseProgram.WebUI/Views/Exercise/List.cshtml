@@ -4,13 +4,9 @@
 }
 @foreach (var e in Model.Exercises)
 {
-    <div>
-        <h3>@e.exerciseName</h3>
-        @e.exerciseDesc
-        <h4>@e.exerciseMax</h4>
-    </div>
+    @Html.Partial("ExerciseSummary", e)
 }
 
-<div>
+<div class="pager">
     @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
 </div>
