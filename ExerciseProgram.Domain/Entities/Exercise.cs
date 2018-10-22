@@ -11,7 +11,7 @@ namespace ExerciseProgram.Domain.Entities
         public int exerciseID { get; set; }
         public string exerciseName { get; set; }
         public string exerciseDesc { get; set; }
-        public int exerciseMax { get; set; }
+        public decimal exerciseMax { get; set; }
         public int catID { get; set; }
     }
 }
