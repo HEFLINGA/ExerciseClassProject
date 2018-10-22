@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Abstract\ICustomerRepository.cs" />
     <Compile Include="Abstract\IExerciseRepository.cs" />
+    <Compile Include="Concrete\EFCustomerRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFExerciseRepository.cs" />
     <Compile Include="Entities\Customer.cs" />
