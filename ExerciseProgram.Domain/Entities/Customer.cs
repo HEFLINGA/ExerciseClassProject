@@ -25,5 +25,8 @@ namespace ExerciseProgram.Domain.Entities
         [StringLength(100)]
         [Display(Name = "Name")]
         public string custName { get; set; }
+
+        [Display(Name = "5 Rep Max")]
+        public int exerciseMax { get; set; }
     }
 }
