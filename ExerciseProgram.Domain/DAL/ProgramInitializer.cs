@@ -1,10 +1,11 @@
-﻿using ExerciseProgram.WebUI.Models;
+﻿using ExerciseProgram.Domain.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ExerciseProgram.WebUI.DAL
+namespace ExerciseProgram.Domain.DAL
 {
     public class ProgramInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ExerciseContext>
     {

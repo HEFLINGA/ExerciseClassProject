@@ -1,12 +1,13 @@
-﻿using System;
+﻿using ExerciseProgram.Domain.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
-using System.Web;
-using ExerciseProgram.WebUI.Models;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ExerciseProgram.WebUI.DAL
+namespace ExerciseProgram.Domain.DAL
 {
     public class ExerciseContext : DbContext
     {

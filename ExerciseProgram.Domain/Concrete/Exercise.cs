@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ExerciseProgram.WebUI.Models
+namespace ExerciseProgram.Domain.Concrete
 {
     public class Exercise
     {
@@ -14,6 +15,6 @@ namespace ExerciseProgram.WebUI.Models
         public int ExerciseMax { get; set; }
 
         public virtual Category Category { get; set; }
-        
+
     }
 }

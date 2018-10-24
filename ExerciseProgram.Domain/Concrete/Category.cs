@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ExerciseProgram.WebUI.Models
+namespace ExerciseProgram.Domain.Concrete
 {
     public class Category
     {
         public int CategoryID { get; set; }
+
+        [Display(Name = "Category")]
         public string Name { get; set; }
         public string Description { get; set; }
 
