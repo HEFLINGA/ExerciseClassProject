@@ -11,20 +11,12 @@ namespace ExerciseProgram.Domain.Entities
     public class Customer
     {
         [Key]
-        public int custID { get; set; }
+        public int CustID { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public decimal Weight { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
-        [Range(1, 200)]
-        [Display(Name = "Age")]
-        public int custAge { get; set; }
-
-        [Range(50, 1000)]
-        [Display(Name = "Weight")]
-        public int custWeight { get; set; }
-
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
-        [Required]
-        [StringLength(100)]
-        [Display(Name = "Name")]
-        public string custName { get; set; }
+        public virtual ICollection<Exercise> Exercises { get; set; }
     }
 }

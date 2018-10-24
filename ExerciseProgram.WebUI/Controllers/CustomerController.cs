@@ -11,107 +11,107 @@ using ExerciseProgram.Domain.Entities;
 
 namespace ExerciseProgram.WebUI.Controllers
 {
-    public class ExercisesController : Controller
+    public class CustomerController : Controller
     {
-        private EFDbContext db = new EFDbContext();
+        private ApplicationContext db = new ApplicationContext();
 
-        // GET: Exercises
+        // GET: Customer
         public ActionResult Index()
         {
-            return View(db.Exercises.ToList());
+            return View(db.Customers.ToList());
         }
 
-        // GET: Exercises/Details/5
+        // GET: Customer/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Exercise exercise = db.Exercises.Find(id);
-            if (exercise == null)
+            Customer customer = db.Customers.Find(id);
+            if (customer == null)
             {
                 return HttpNotFound();
             }
-            return View(exercise);
+            return View(customer);
         }
 
-        // GET: Exercises/Create
+        // GET: Customer/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Exercises/Create
+        // POST: Customer/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "exerciseID,exerciseName,exerciseDesc,exerciseMax")] Exercise exercise)
+        public ActionResult Create([Bind(Include = "CustID,DateOfBirth,Weight,FirstName,LastName")] Customer customer)
         {
             if (ModelState.IsValid)
             {
-                db.Exercises.Add(exercise);
+                db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(exercise);
+            return View(customer);
         }
 
-        // GET: Exercises/Edit/5
+        // GET: Customer/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Exercise exercise = db.Exercises.Find(id);
-            if (exercise == null)
+            Customer customer = db.Customers.Find(id);
+            if (customer == null)
             {
                 return HttpNotFound();
             }
-            return View(exercise);
+            return View(customer);
         }
 
-        // POST: Exercises/Edit/5
+        // POST: Customer/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "exerciseID,exerciseName,exerciseDesc,exerciseMax")] Exercise exercise)
+        public ActionResult Edit([Bind(Include = "CustID,DateOfBirth,Weight,FirstName,LastName")] Customer customer)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(exercise).State = EntityState.Modified;
+                db.Entry(customer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(exercise);
+            return View(customer);
         }
 
-        // GET: Exercises/Delete/5
+        // GET: Customer/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Exercise exercise = db.Exercises.Find(id);
-            if (exercise == null)
+            Customer customer = db.Customers.Find(id);
+            if (customer == null)
             {
                 return HttpNotFound();
             }
-            return View(exercise);
+            return View(customer);
         }
 
-        // POST: Exercises/Delete/5
+        // POST: Customer/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Exercise exercise = db.Exercises.Find(id);
-            db.Exercises.Remove(exercise);
+            Customer customer = db.Customers.Find(id);
+            db.Customers.Remove(customer);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -48,14 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\ICategoryRepository.cs" />
-    <Compile Include="Abstract\ICustomerRepository.cs" />
-    <Compile Include="Abstract\IExerciseRepository.cs" />
+    <Compile Include="Concrete\ApplicationContext.cs" />
     <Compile Include="Concrete\Calculation.cs" />
-    <Compile Include="Concrete\EFCatergoryRepository.cs" />
-    <Compile Include="Concrete\EFCustomerRepository.cs" />
-    <Compile Include="Concrete\EFDbContext.cs" />
-    <Compile Include="Concrete\EFExerciseRepository.cs" />
+    <Compile Include="Concrete\ExerciseProgramInitializer.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Exercise.cs" />
@@ -85,6 +80,9 @@
     <Content Include="Scripts\jquery.validate.globalize.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstract\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,7 +15,7 @@ namespace ExerciseProgram.Domain.Concrete
 
         public int SetWeight()
         {
-            RepsWeight = Exercise.exerciseMax;
+            RepsWeight = Exercise.ExerciseMax;
             if (CurrentSet == 1)
             {
                 return RepsWeight = RepsWeight * 15 / 100;
