@@ -42,7 +42,7 @@ namespace ExerciseProgram.UnitTests
         }
 
         [TestMethod]
-        public void Can_Sned_Pagination_View_Model()
+        public void Can_Send_Pagination_View_Model()
         {
             // Arrange
             Mock<IExerciseRepository> mock = new Mock<IExerciseRepository>();

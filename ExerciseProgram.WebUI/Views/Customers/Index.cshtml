@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ExerciseProgram.Domain.Entities.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.custAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.custWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.custName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.custAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.custWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.custName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.custID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.custID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.custID })
+        </td>
+    </tr>
+}
+
+</table>

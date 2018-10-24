@@ -10,6 +10,7 @@ namespace ExerciseProgram.Domain.Entities
 {
     public class Customer
     {
+        [Key]
         public int custID { get; set; }
 
         [Range(1, 200)]
@@ -25,8 +26,5 @@ namespace ExerciseProgram.Domain.Entities
         [StringLength(100)]
         [Display(Name = "Name")]
         public string custName { get; set; }
-
-        [Display(Name = "5 Rep Max")]
-        public int exerciseMax { get; set; }
     }
 }
