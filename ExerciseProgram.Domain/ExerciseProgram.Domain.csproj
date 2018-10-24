@@ -48,12 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICategoryRepository.cs" />
     <Compile Include="Abstract\ICustomerRepository.cs" />
     <Compile Include="Abstract\IExerciseRepository.cs" />
     <Compile Include="Concrete\Calculation.cs" />
+    <Compile Include="Concrete\EFCatergoryRepository.cs" />
     <Compile Include="Concrete\EFCustomerRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFExerciseRepository.cs" />
+    <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Exercise.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

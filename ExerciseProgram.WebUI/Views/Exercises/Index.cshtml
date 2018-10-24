@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<ExerciseProgram.Domain.Entities.Exercise>
+@model IEnumerable<ExerciseProgram.Domain.Entities.Category>
 
 @{
     ViewBag.Title = "Index";
@@ -21,7 +22,7 @@
             @Html.DisplayNameFor(model => model.exerciseMax)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.catID)
+            @
         </th>
         <th></th>
     </tr>
@@ -38,7 +39,7 @@
             @Html.DisplayFor(modelItem => item.exerciseMax)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.catID)
+            @Html.DisplayFor(modelItem => item.)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.exerciseID }) |

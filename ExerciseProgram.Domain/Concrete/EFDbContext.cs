@@ -7,5 +7,6 @@ namespace ExerciseProgram.Domain.Concrete
     {
         public DbSet<Exercise> Exercises { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
