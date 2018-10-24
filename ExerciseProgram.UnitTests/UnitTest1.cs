@@ -28,8 +28,7 @@ namespace ExerciseProgram.UnitTests
                 new Exercise {exerciseID = 5, exerciseName = "E5"}
             });
 
-            ExerciseController controller = new ExerciseController(mock.Object);
-            controller.PageSize = 3;
+            ExercisesController controller = new ExercisesController();
 
             // Act
             ExerciseListViewModel result = (ExerciseListViewModel)controller.List(2).Model;
@@ -56,7 +55,7 @@ namespace ExerciseProgram.UnitTests
             });
 
             // Arrange
-            ExerciseController controller = new ExerciseController(mock.Object);
+            ExercisesController controller = new ExercisesController(mock.Object);
             controller.PageSize = 3;
 
             // Act

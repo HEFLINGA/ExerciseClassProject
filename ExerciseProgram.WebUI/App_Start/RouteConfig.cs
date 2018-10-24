@@ -11,14 +11,14 @@ namespace ExerciseProgram.WebUI
 
             routes.MapRoute(
                 name: null,
-                url: "Page{page}",
-                defaults: new { Controller = "Exercise", action = "List" }
+                url: "{controller}/{action}/{id}",
+                defaults: new { Controller = "Customers", action = "Index" }
             );
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Exercise", action = "List", id = UrlParameter.Optional }
+                defaults: new { controller = "Exercises", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

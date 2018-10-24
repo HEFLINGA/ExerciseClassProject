@@ -10,11 +10,12 @@
         <!-- TODO - Change the look of app to liking -->
 <body>
     <div class="navbar navbar-inverse" role="navigation">
-        <a class="navbar-brand" href="#">EXERCISE PROGRAM</a>
+        <a class="navbar-brand" href="Exercises">EXERCISE PROGRAM</a>
     </div>
-    <div class="row panel">
-        <div id="categories" class="col-xs-3">
-            THIS IS AN APP FOR EXERCISE AND CALCULATIONS
+    <div class="navbar navbar-nav" role="navigation">
+        <div id="categories" class="col-xs-6">
+            @Html.ActionLink("Setting Exercises' Max", "Index", "Exercises")
+            @Html.ActionLink("Personal Information", "Index", "Customers")
         </div>
         <div class="col-xs-8">
             @RenderBody()
