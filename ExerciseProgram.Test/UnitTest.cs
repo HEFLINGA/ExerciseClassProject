@@ -13,17 +13,31 @@ namespace ExerciseProgram.Test
     public class UnitTest
     {
         [TestMethod]
-        public void Can_Do_Math()
+        public void Can_Do_Math_On_FiveByFive_Sets()
         {
-            var exerciseMax = 225;
-            var currentPhase = 1;
-            var currentSet = 1;
-
             Calculation cal = new Calculation();
 
-            var tmp = cal.WeightOnSet(currentPhase, exerciseMax, currentSet);
+            Assert.AreEqual(135, cal.WeightOnFiveByFiveSet(225, 1));
+            Assert.AreEqual(170, cal.WeightOnFiveByFiveSet(245, 2));
+            Assert.AreEqual(210, cal.WeightOnFiveByFiveSet(265, 3));
+            Assert.AreEqual(205, cal.WeightOnFiveByFiveSet(225, 4));
+            Assert.AreEqual(225, cal.WeightOnFiveByFiveSet(225, 5));
+        }
 
-            Assert.AreEqual(112, tmp);
+        [TestMethod]
+        public void Can_Do_Math_On_OneByThree_Set()
+        {
+            Calculation cal = new Calculation();
+
+            Assert.AreEqual(235, cal.WeightOnOneByThreeSet(225));
+        }
+
+        [TestMethod]
+        public void Can_Do_Math_On_OneByEight_Set()
+        {
+            Calculation cal = new Calculation();
+
+            Assert.AreEqual(180, cal.WeightOnOneByEightSet(225));
         }
     }
 }

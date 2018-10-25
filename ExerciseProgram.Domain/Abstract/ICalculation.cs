@@ -6,6 +6,8 @@ namespace ExerciseProgram.Domain.Abstract
     {
         int CurrentPhase { get; set; }
         int CurrentSet { get; set; }
-        int WeightOnSet(int currentPhase, int exerciseMax, int currentSet);
+        int WeightOnFiveByFiveSet(int exerciseMax, int currentSet);
+        int WeightOnOneByThreeSet(int exerciseMax);
+        int WeightOnOneByEightSet(int exerciseMax);
     }
 }

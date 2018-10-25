@@ -55,6 +55,7 @@
     <Compile Include="Concrete\Calculation.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Exercise.cs" />
+    <Compile Include="Concrete\GoToNearestFive.cs" />
     <Compile Include="DAL\ExerciseContext.cs" />
     <Compile Include="DAL\ProgramInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

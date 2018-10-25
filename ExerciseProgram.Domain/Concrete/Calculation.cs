@@ -9,56 +9,64 @@ namespace ExerciseProgram.Domain.Concrete
 {
     public class Calculation : ICalculation
     {
-        private int[] currentSetWeight = new int[5];
+        GoToNearestFive nearestFive = new GoToNearestFive();
+        Exercise Exercise = new Exercise();
+        private int currentSetWeight;
         public int CurrentSet { get; set; }
         public int CurrentPhase { get; set; }
 
-        public int WeightOnSet(int currentPhase, int exerciseMax, int currentSet)
+        public int WeightOnFiveByFiveSet(int exerciseMax, int currentSet)
         {
-            currentSetWeight[0] = exerciseMax;
+            currentSetWeight = exerciseMax;
 
-            if (currentPhase == 1)
+            if (currentSet == 1)
             {
-                if (currentSet == 1)
-                {
-                    return currentSetWeight[0] / 2;
-                }
-                else if (currentSet == 2)
-                {
-                    return currentSetWeight[1] += currentSetWeight[0] * 10 / 100;
-                }
-                else if (currentSet == 3)
-                {
-                    return currentSetWeight[2] += currentSetWeight[1] * 10 / 100;
-                }
-                else if (currentSet == 4)
-                {
-                    return currentSetWeight[3] += currentSetWeight[2] * 10 / 100;
-                }
-                else if (currentSet == 5)
-                {
-                    return currentSetWeight[4] += currentSetWeight[3] * 10 / 100;
-                }
-                else
-                {
-                    throw new Exception("Current set weight or max is not correct");
-                }
-                
+                currentSetWeight -= currentSetWeight * 40 / 100;
+                currentSetWeight = nearestFive.RoundTo(currentSetWeight, 5);
+                return currentSetWeight;
             }
-            /*
-            else if (currentPhase == 2)
+            else if (currentSet == 2)
             {
-
+                currentSetWeight -= currentSetWeight * 30 / 100;
+                currentSetWeight = nearestFive.RoundTo(currentSetWeight, 5);
+                return currentSetWeight;
             }
-            else if (currentPhase == 2)
+            else if (currentSet == 3)
             {
-
+                currentSetWeight -= currentSetWeight * 20 / 100;
+                currentSetWeight = nearestFive.RoundTo(currentSetWeight, 5);
+                return currentSetWeight;
             }
-            */
+            else if (currentSet == 4)
+            {
+                currentSetWeight -= currentSetWeight * 10 / 100;
+                currentSetWeight = nearestFive.RoundTo(currentSetWeight, 5);
+                return currentSetWeight;
+            }
+            else if (currentSet == 5)
+            {
+                currentSetWeight = nearestFive.RoundTo(currentSetWeight, 5);
+                return currentSetWeight;
+            }
             else
             {
-                throw new Exception("Phase Information Incorrect");
+                throw new Exception("Current set weight or max is not correct");
             }
+        }
+        public int WeightOnOneByThreeSet(int exerciseMax)
+        {
+            currentSetWeight = exerciseMax;
+            currentSetWeight += exerciseMax * 5 / 100;
+            currentSetWeight = nearestFive.RoundTo(currentSetWeight, 5);
+            Exercise.ExerciseMax += exerciseMax * 5 / 100;
+            return currentSetWeight;
+        }
+        public int WeightOnOneByEightSet(int exerciseMax)
+        {
+            currentSetWeight = exerciseMax;
+            currentSetWeight -= currentSetWeight * 20 / 100;
+            currentSetWeight = nearestFive.RoundTo(currentSetWeight, 5);
+            return currentSetWeight;
         }
     }
 }
