@@ -10,6 +10,7 @@ namespace ExerciseProgram.Domain.Concrete
 {
     public class Category
     {
+        [Display(Name = "Category")]
         public int CategoryID { get; set; }
 
         [Display(Name = "Category")]

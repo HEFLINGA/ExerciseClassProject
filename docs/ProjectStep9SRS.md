@@ -16,8 +16,6 @@
 
 ### User Input;
 	*INPUT1* The Application will take user's name
-	*INPUT2* The Application will take user's age, but can be left null
-	*INPUT3* The Application will take user's weight, but can be left null
 	*INPUT4* The Application will take user's max for each exercise in Database (ref: EXM1, EXM2)
 	*INPUT5* The Application will take in user's custom Exercises if they choose to do so (ref: DB5)
 	*INPUT6* User will have the ability to select a certain exercise, and see the in-depth details of that exercise (ref: UI5)
@@ -78,29 +76,6 @@
 	*PLATES6* Plate weight will use 2.5lbs as a plate
 	*Plates7* Calculating plates needed for weight of given Exercise and ExerciseMax will have a precedence hierarchy for which plates to use before trying to use other plates
 	*PLATES8* Plates Hierarchy is as follows: 45lbs > 25lbs > 10lbs > 5lbs > 2.5lbs. Application will try to use as few plates as possible in order to get to assigned weight (Using bigger plates first before smaller ones)
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

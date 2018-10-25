@@ -15,14 +15,14 @@ namespace ExerciseProgram.WebUI.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "A little information behind the method I am using, and/or working on using for this Application:";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact Info:";
 
             return View();
         }
