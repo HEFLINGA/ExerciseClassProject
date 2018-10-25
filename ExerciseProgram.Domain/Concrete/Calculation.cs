@@ -9,20 +9,11 @@ namespace ExerciseProgram.Domain.Concrete
 {
     public class Calculation : ICalculation
     {
-        public int currentSet;
-        public int currentPhase;
+        public int CurrentSet { get; set; }
+        public int CurrentPhase { get; set; }
 
-        public int FifthSet(int currentPhase)
-        {
-            throw new NotImplementedException();
-        }
 
         public int FirstSet(int currentPhase)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int FourthSet(int currentPhase)
         {
             throw new NotImplementedException();
         }
@@ -33,6 +24,16 @@ namespace ExerciseProgram.Domain.Concrete
         }
 
         public int ThirdSet(int currentPhase)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int FourthSet(int currentPhase)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int FifthSet(int currentPhase)
         {
             throw new NotImplementedException();
         }
