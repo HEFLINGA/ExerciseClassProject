@@ -3,12 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{6A73FA0E-831A-4B39-8805-8B5E6C47C1DF}"
-	ProjectSection(SolutionItems) = preProject
-		docs\ProjectStep9SRS.md = docs\ProjectStep9SRS.md
-		docs\README.md = docs\README.md
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "code", "code", "{11960237-3405-43AE-8FE9-C28AAC6A4A8E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciseProgram.WebUI", "ExerciseProgram.WebUI\ExerciseProgram.WebUI.csproj", "{E7A00233-A537-4BB8-B7C0-F9EDE7B73D88}"
