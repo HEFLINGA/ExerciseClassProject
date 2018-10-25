@@ -13,7 +13,6 @@ namespace ExerciseProgram.Domain.Concrete
         Exercise Exercise = new Exercise();
         private int currentSetWeight;
         public int CurrentSet { get; set; }
-        public int CurrentPhase { get; set; }
 
         public int WeightOnFiveByFiveSet(int exerciseMax, int currentSet)
         {
