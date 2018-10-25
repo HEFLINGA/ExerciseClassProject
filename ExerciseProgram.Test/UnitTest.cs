@@ -13,9 +13,17 @@ namespace ExerciseProgram.Test
     public class UnitTest
     {
         [TestMethod]
-        public void First_Test()
+        public void Can_Do_Math()
         {
-            
+            var exerciseMax = 225;
+            var currentPhase = 1;
+            var currentSet = 1;
+
+            Calculation cal = new Calculation();
+
+            var tmp = cal.WeightOnSet(currentPhase, exerciseMax, currentSet);
+
+            Assert.AreEqual(112, tmp);
         }
     }
 }
