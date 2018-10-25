@@ -51,11 +51,18 @@ namespace ExerciseProgram.WebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ExerciseID,CategoryID,Name,Description,ExerciseMax")] Exercise exercise)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Exercises.Add(exercise);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Exercises.Add(exercise);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (DataException)
+            {
+                ModelState.AddModelError("", "Unable to save changes. Please Try again");
             }
 
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name", exercise.CategoryID);
