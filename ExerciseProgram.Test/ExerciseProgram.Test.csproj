@@ -55,6 +55,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExerciseProgram.Domain\ExerciseProgram.Domain.csproj">
+      <Project>{7fa8bdbd-f52b-4a5f-9377-f91e20726f3d}</Project>
+      <Name>ExerciseProgram.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExerciseProgram.WebUI\ExerciseProgram.WebUI.csproj">
+      <Project>{e7a00233-a537-4bb8-b7c0-f9ede7b73d88}</Project>
+      <Name>ExerciseProgram.WebUI</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -51,17 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICalculation.cs" />
+    <Compile Include="Concrete\Calculation.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Exercise.cs" />
     <Compile Include="DAL\ExerciseContext.cs" />
     <Compile Include="DAL\ProgramInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ExerciseProgram.Test\ExerciseProgram.Test.csproj">
-      <Project>{3a7b223b-4513-4e84-ac04-0552eff5cb9a}</Project>
-      <Name>ExerciseProgram.Test</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

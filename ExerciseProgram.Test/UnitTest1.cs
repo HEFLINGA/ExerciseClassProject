@@ -9,6 +9,7 @@ namespace ExerciseProgram.Test
         [TestMethod]
         public void TestMethod1()
         {
+
         }
     }
 }
