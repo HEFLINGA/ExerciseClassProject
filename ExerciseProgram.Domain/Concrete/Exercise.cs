@@ -22,6 +22,5 @@ namespace ExerciseProgram.Domain.Concrete
         public int ExerciseMax { get; set; }
 
         public virtual Category Category { get; set; }
-
     }
 }

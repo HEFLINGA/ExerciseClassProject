@@ -9,14 +9,6 @@ namespace ExerciseProgram.Domain.Concrete
 {
     public class Plate : IPlate
     {
-        /*
-        private readonly string FourtyFive = "45";
-        private readonly string TwentyFive = "25";
-        private readonly string Ten = "10";
-        private readonly string Five = "5";
-        private readonly string TwoPointFive = "2.5";
-        */
-
         public string PlateWeight(int totalWeight)
         {
             totalWeight -= 45;
