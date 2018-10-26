@@ -9,11 +9,13 @@ namespace ExerciseProgram.Domain.Concrete
 {
     public class Plate : IPlate
     {
+        /*
         private readonly string FourtyFive = "45";
         private readonly string TwentyFive = "25";
         private readonly string Ten = "10";
         private readonly string Five = "5";
         private readonly string TwoPointFive = "2.5";
+        */
 
         public string PlateWeight(int totalWeight)
         {
@@ -54,11 +56,31 @@ namespace ExerciseProgram.Domain.Concrete
                     totalOf10 -= 4;
                 }
             }
-                
 
-            string answer = $"{totalOf45}x{FourtyFive}, {totalOf25}x{TwentyFive}, {totalOf10}x{Ten}, {totalOf5}x{Five}, {totalOf2Point5}x{TwoPointFive}";
+            string answer = "";
 
-            return $"{answer}";
+            if (totalOf45 > 0)
+            {
+                answer += $"{totalOf45}x45 ";
+            }
+            if (totalOf25 > 0)
+            {
+                answer += $"{totalOf25}x25 ";
+            }
+            if (totalOf10 > 0)
+            {
+                answer += $"{totalOf10}x10 ";
+            }
+            if (totalOf5 > 0)
+            {
+                answer += $"{totalOf5}x5 ";
+            }
+            if (totalOf2Point5 > 0)
+            {
+                answer += $"{totalOf2Point5}x2.5";
+            }
+
+            return $"Plates: {answer}";
         }
     }
 }

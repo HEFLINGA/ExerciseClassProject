@@ -63,9 +63,9 @@ namespace ExerciseProgram.Test
                 ExerciseMax = 305
             };
             
-            Assert.AreEqual("2x45, 2x25, 2x10, 0x5, 0x2.5"
+            Assert.AreEqual("Plates: 2x45 2x25 2x10 "
                 , plate.PlateWeight(cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 5)));
-            Assert.AreEqual("6x45, 0x25, 0x10, 0x5, 2x2.5"
+            Assert.AreEqual("Plates: 6x45 2x2.5 "
                 , plate.PlateWeight(cal.WeightOnOneByThreeSet(exercise2.ExerciseMax)));
         }
     }
