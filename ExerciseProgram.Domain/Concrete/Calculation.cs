@@ -10,7 +10,6 @@ namespace ExerciseProgram.Domain.Concrete
     public class Calculation : ICalculation
     {
         GoToNearestFive nearestFive = new GoToNearestFive();
-        Exercise Exercise = new Exercise();
         private int currentSetWeight;
         public int CurrentSet { get; set; }
 
@@ -57,7 +56,6 @@ namespace ExerciseProgram.Domain.Concrete
             currentSetWeight = exerciseMax;
             currentSetWeight += exerciseMax * 5 / 100;
             currentSetWeight = nearestFive.RoundTo(currentSetWeight, 5);
-            Exercise.ExerciseMax += exerciseMax * 5 / 100;
             return currentSetWeight;
         }
         public int WeightOnOneByEightSet(int exerciseMax)

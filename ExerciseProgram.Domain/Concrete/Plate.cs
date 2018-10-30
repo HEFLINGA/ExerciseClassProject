@@ -1,4 +1,5 @@
 ﻿using ExerciseProgram.Domain.Abstract;
+using ExerciseProgram.Domain.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 namespace ExerciseProgram.Domain.Concrete
 {
     public class Plate : IPlate
-    {
+    {      
         public string PlateWeight(int totalWeight)
         {
             totalWeight -= 45;

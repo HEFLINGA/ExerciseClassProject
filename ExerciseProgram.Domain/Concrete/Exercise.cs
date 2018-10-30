@@ -18,7 +18,7 @@ namespace ExerciseProgram.Domain.Concrete
         public string Name { get; set; }
         public string Description { get; set; }
 
-        [Display(Name = "5 Rep Max")]
+        [Display(Name = "Max")]
         public int ExerciseMax { get; set; }
 
         public virtual Category Category { get; set; }
