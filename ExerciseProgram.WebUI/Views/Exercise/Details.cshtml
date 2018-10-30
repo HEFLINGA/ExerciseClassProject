@@ -6,11 +6,6 @@
 
 <h2>Details</h2>
 
-@* The code below sends me to another page in another view *@
-
-<p>
-    @Html.ActionLink("Weight Details", "Index", "Plate")
-</p>
 <div>
     <h4>Exercise</h4>
     <hr />
@@ -49,6 +44,7 @@
     </dl>
 </div>
 <p>
+    @Html.ActionLink("Weight Details", "Index", "Plate") |
     @Html.ActionLink("Edit", "Edit", new { id = Model.ExerciseID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

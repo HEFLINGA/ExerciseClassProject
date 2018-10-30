@@ -6,9 +6,12 @@
 <h2>Plates</h2>
 
 <div>
-    This will eventually display the plate weight information for the exercise details that were being viewed.
+    This will eventually display the plate weight information for the exercise details that were being viewed. Currently displays a hard coded value of 305.
     <br />
     @{ 
         @Model.PlateWeight(305);
     }
 </div>
+<p>
+    @Html.ActionLink("Back to List", "Index", "Exercise")
+</p>
