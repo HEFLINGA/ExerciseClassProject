@@ -23,11 +23,16 @@ namespace ExerciseProgram.Test
                 CategoryID = 1
             };
 
-            Assert.AreEqual(135, cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 1));
-            Assert.AreEqual(170, cal.WeightOnFiveByFiveSet(245, 2));
-            Assert.AreEqual(210, cal.WeightOnFiveByFiveSet(265, 3));
-            Assert.AreEqual(205, cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 4));
-            Assert.AreEqual(225, cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 5));
+            Assert.AreEqual(135
+                , cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 1));
+            Assert.AreEqual(170
+                , cal.WeightOnFiveByFiveSet(245, 2));
+            Assert.AreEqual(210
+                , cal.WeightOnFiveByFiveSet(265, 3));
+            Assert.AreEqual(205
+                , cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 4));
+            Assert.AreEqual(225
+                , cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 5));
         }
 
         [TestMethod]
@@ -35,7 +40,8 @@ namespace ExerciseProgram.Test
         {
             Calculation cal = new Calculation();
 
-            Assert.AreEqual(235, cal.WeightOnOneByThreeSet(225));
+            Assert.AreEqual(235
+                , cal.WeightOnOneByThreeSet(225));
         }
 
         [TestMethod]
@@ -43,7 +49,8 @@ namespace ExerciseProgram.Test
         {
             Calculation cal = new Calculation();
 
-            Assert.AreEqual(180, cal.WeightOnOneByEightSet(225));
+            Assert.AreEqual(180
+                , cal.WeightOnOneByEightSet(225));
         }
 
         [TestMethod]
@@ -65,7 +72,7 @@ namespace ExerciseProgram.Test
             
             Assert.AreEqual("Plates: 2x45 2x25 2x10 "
                 , plate.PlateWeight(cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 5)));
-            Assert.AreEqual("Plates: 6x45 2x2.5 "
+            Assert.AreEqual("Plates: 6x45 2x2.5"
                 , plate.PlateWeight(cal.WeightOnOneByThreeSet(exercise2.ExerciseMax)));
         }
     }
