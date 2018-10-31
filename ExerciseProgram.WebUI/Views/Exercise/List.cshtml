@@ -1,0 +1,25 @@
+﻿@model ExerciseProgram.WebUI.Models.ExercisesListViewModel
+@{
+    ViewBag.Title = "Exercises";
+}
+<div>
+    <div id="categories">
+        @Html.Action("Menu", "Nav")
+    </div>
+
+    <div class="btn-group">
+        @foreach (var e in Model.Exercises)
+        {
+            @Html.Partial("ExerciseSummary", e)
+        }
+    </div>
+
+
+    <div class="btn-group pull-right">
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("List",
+        new { page = x, category = Model.CurrentCategory }))
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Back to Table", "Index")
+</p>

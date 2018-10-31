@@ -6,15 +6,47 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using ExerciseProgram.Domain.Abstract;
 using ExerciseProgram.Domain.Concrete;
 using ExerciseProgram.Domain.DAL;
+using ExerciseProgram.WebUI.Models;
 
 namespace ExerciseProgram.WebUI.Controllers
 {
     public class ExerciseController : Controller
     {
         private ExerciseContext db = new ExerciseContext();
+        // TODO: CURRENT TRIAL CHANGES
+        private IExerciseRepository exerciseRepository;
+        public int PageSize = 4;
 
+        public ExerciseController(IExerciseRepository exRepository)
+        {
+            this.exerciseRepository = exRepository;
+        }
+
+        public ViewResult List(string category, int page = 1)
+        {
+            ExercisesListViewModel model = new ExercisesListViewModel
+            {
+                Exercises = exerciseRepository.Exercises
+                .Where(e => category == null || e.Category.Name == category)
+                .OrderBy(e => e.ExerciseID)
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalItems = category == null ?
+                        exerciseRepository.Exercises.Count() :
+                        exerciseRepository.Exercises.Where(e => e.Category.Name == category).Count()
+                },
+                CurrentCategory = category
+            };
+
+            return View(model);
+        }
 
         // GET: Exercise
         public ActionResult Index()

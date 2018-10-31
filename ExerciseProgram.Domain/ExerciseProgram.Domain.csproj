@@ -52,10 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICalculation.cs" />
+    <Compile Include="Abstract\ICategoryRepository.cs" />
     <Compile Include="Abstract\IExerciseRepository.cs" />
     <Compile Include="Abstract\IPlate.cs" />
     <Compile Include="Concrete\Calculation.cs" />
     <Compile Include="Concrete\Category.cs" />
+    <Compile Include="Concrete\EFCategoryRepository.cs" />
+    <Compile Include="Concrete\EFExerciseRepository.cs" />
     <Compile Include="Concrete\Exercise.cs" />
     <Compile Include="Concrete\GoToNearestFive.cs" />
     <Compile Include="Concrete\Plate.cs" />

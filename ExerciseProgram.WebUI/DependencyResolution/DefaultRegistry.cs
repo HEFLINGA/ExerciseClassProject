@@ -16,6 +16,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace ExerciseProgram.WebUI.DependencyResolution {
+    using ExerciseProgram.Domain.Abstract;
+    using ExerciseProgram.Domain.Concrete;
     using StructureMap;
     using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
@@ -30,6 +32,7 @@ namespace ExerciseProgram.WebUI.DependencyResolution {
                     scan.WithDefaultConventions();
 					scan.With(new ControllerConvention());
                 });
+            For<IExerciseRepository>().Use<EFExerciseRepository>();
             //For<IExample>().Use<Example>();
         }
 

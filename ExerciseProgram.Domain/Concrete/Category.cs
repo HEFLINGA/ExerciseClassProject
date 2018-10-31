@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExerciseProgram.Domain.Abstract;
 
 namespace ExerciseProgram.Domain.Concrete
 {
