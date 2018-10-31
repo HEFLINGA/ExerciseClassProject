@@ -15,6 +15,7 @@ namespace ExerciseProgram.WebUI.Controllers
     {
         private ExerciseContext db = new ExerciseContext();
 
+
         // GET: Exercise
         public ActionResult Index()
         {

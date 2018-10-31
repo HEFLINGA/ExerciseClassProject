@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICalculation.cs" />
+    <Compile Include="Abstract\IExerciseRepository.cs" />
     <Compile Include="Abstract\IPlate.cs" />
     <Compile Include="Concrete\Calculation.cs" />
     <Compile Include="Concrete\Category.cs" />
