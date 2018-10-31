@@ -1,17 +1,19 @@
-﻿@model ExerciseProgram.Domain.Concrete.Plate
+﻿@model ExerciseProgram.WebUI.Models.PlateIndexViewModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Total for Plates: ";
 }
 
-<h2>Plates</h2>
-
-<div>
-    This will eventually display the plate weight information for the exercise details that were being viewed. Currently displays a hard coded value of 305.
-    <br />
-    @{ 
-        @Model.PlateWeight(305);
-    }
-</div>
-<p>
-    @Html.ActionLink("Back to List", "Index", "Exercise")
-</p>
+<h2>Your Plates</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>5 Rep Max</th>
+            <th>Exercise</th>
+            <th class="text-right">5 Rep Max</th>
+            <th class="text-right">Plates</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Model.Plate.ComputeTotalPlates()
+    </tbody>
+</table>

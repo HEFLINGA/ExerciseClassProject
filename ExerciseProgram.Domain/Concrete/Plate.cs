@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ExerciseProgram.Domain.Concrete
 {
     public class Plate : IPlate
-    {      
+    {
         public string PlateWeight(int totalWeight)
         {
             totalWeight -= 45;
@@ -75,5 +75,22 @@ namespace ExerciseProgram.Domain.Concrete
 
             return $"Plates: {answer}";
         }
+
+        private Plates plate = new Plates();
+        
+        public void AddExercise(Exercise exercise)
+        {
+            this.plate.Exercise = exercise;
+        }
+
+        public string ComputeTotalPlates()
+        {
+            return PlateWeight(plate.Exercise.ExerciseMax);
+        }
+    }
+
+    public class Plates
+    {
+        public Exercise Exercise { get; set; }
     }
 }
