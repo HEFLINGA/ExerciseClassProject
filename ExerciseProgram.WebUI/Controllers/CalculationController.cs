@@ -30,11 +30,10 @@ namespace ExerciseProgram.WebUI.Controllers
             Exercise exercise = repository.Exercises
                 .FirstOrDefault(e => e.ExerciseID == exerciseId);
             Calculation calculation = new Calculation();
-            Plate plate = new Plate();
 
             if (exercise != null)
             {
-                GetCalculation().AddExercise(exercise, 1, calculation);
+                GetCalculation().AddExercise(exercise, calculation);
             }
             return RedirectToAction("Index", new { returnUrl });
         }

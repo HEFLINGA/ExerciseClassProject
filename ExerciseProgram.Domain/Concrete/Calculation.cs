@@ -10,10 +10,11 @@ namespace ExerciseProgram.Domain.Concrete
     public class Calculation : ICalculation
     {
         GoToNearestFive nearestFive = new GoToNearestFive();
-        private int currentSetWeight;
+        private int currentSetWeight = 0;
 
         public int WeightOnFiveByFiveSet(int exerciseMax, int currentSet)
         {
+            currentSetWeight = 0;
             currentSetWeight = exerciseMax;
 
             if (currentSet == 1)
@@ -52,6 +53,7 @@ namespace ExerciseProgram.Domain.Concrete
         }
         public int WeightOnOneByThreeSet(int exerciseMax)
         {
+            currentSetWeight = 0;
             currentSetWeight = exerciseMax;
             currentSetWeight += exerciseMax * 5 / 100;
             currentSetWeight = nearestFive.RoundTo(currentSetWeight, 5);
@@ -59,6 +61,7 @@ namespace ExerciseProgram.Domain.Concrete
         }
         public int WeightOnOneByEightSet(int exerciseMax)
         {
+            currentSetWeight = 0;
             currentSetWeight = exerciseMax;
             currentSetWeight -= currentSetWeight * 20 / 100;
             currentSetWeight = nearestFive.RoundTo(currentSetWeight, 5);
@@ -68,7 +71,7 @@ namespace ExerciseProgram.Domain.Concrete
         // Start of new code
         public List<CalcLine> lineCollection = new List<CalcLine>();
 
-        public void AddExercise(Exercise exercise, int quantity, Calculation calculation)
+        public void AddExercise(Exercise exercise, Calculation calculation)
         {
             CalcLine line = lineCollection
                 .Where(c => c.Exercise.ExerciseID == exercise.ExerciseID)
@@ -76,16 +79,12 @@ namespace ExerciseProgram.Domain.Concrete
 
             if (line == null)
             {
+                lineCollection.RemoveAll(e => e.Exercise.ExerciseID != exercise.ExerciseID);
                 lineCollection.Add(new CalcLine
                 {
                     Exercise = exercise,
-                    Quantity = quantity,
                     Calculation = calculation
                 });
-            }
-            else
-            {
-                line.Quantity += quantity;
             }
         }
 
@@ -97,6 +96,14 @@ namespace ExerciseProgram.Domain.Concrete
         public decimal ComputeTotal(int index)
         {
             return lineCollection.Sum(e => e.Calculation.WeightOnFiveByFiveSet(e.Exercise.ExerciseMax, index));
+        }
+        public decimal ComputeTotal()
+        {
+            return lineCollection.Sum(e => e.Calculation.WeightOnOneByEightSet(e.Exercise.ExerciseMax));
+        }
+        public decimal ComputeTotalOfThree()
+        {
+            return lineCollection.Sum(e => e.Calculation.WeightOnOneByThreeSet(e.Exercise.ExerciseMax));
         }
 
         public void Clear()
@@ -113,7 +120,6 @@ namespace ExerciseProgram.Domain.Concrete
         {
             public Exercise Exercise { get; set; }
             public Calculation Calculation { get; set; }
-            public int Quantity { get; set; }
         }
     }
 }
