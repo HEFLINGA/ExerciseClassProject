@@ -7,7 +7,7 @@
         @Html.Action("Menu", "Nav")
     </div>
 
-    <div class="btn-group">
+    <div class="btn-group-justified">
         @foreach (var e in Model.Exercises)
         {
             @Html.Partial("ExerciseSummary", e)

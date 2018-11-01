@@ -11,7 +11,6 @@ namespace ExerciseProgram.Domain.Concrete
     {
         GoToNearestFive nearestFive = new GoToNearestFive();
         private int currentSetWeight;
-        public int CurrentSet { get; set; }
 
         public int WeightOnFiveByFiveSet(int exerciseMax, int currentSet)
         {
@@ -64,6 +63,57 @@ namespace ExerciseProgram.Domain.Concrete
             currentSetWeight -= currentSetWeight * 20 / 100;
             currentSetWeight = nearestFive.RoundTo(currentSetWeight, 5);
             return currentSetWeight;
+        }
+
+        // Start of new code
+        public List<CalcLine> lineCollection = new List<CalcLine>();
+
+        public void AddExercise(Exercise exercise, int quantity, Calculation calculation)
+        {
+            CalcLine line = lineCollection
+                .Where(c => c.Exercise.ExerciseID == exercise.ExerciseID)
+                .FirstOrDefault();
+
+            if (line == null)
+            {
+                lineCollection.Add(new CalcLine
+                {
+                    Exercise = exercise,
+                    Quantity = quantity,
+                    Calculation = calculation
+                });
+            }
+            else
+            {
+                line.Quantity += quantity;
+            }
+        }
+
+        public void RemoveLine(Exercise exercise)
+        {
+            lineCollection.RemoveAll(l => l.Exercise.ExerciseID == exercise.ExerciseID);
+        }
+
+        public decimal ComputeTotal()
+        {
+            return lineCollection.Sum(e => e.Calculation.WeightOnFiveByFiveSet(e.Exercise.ExerciseMax, 1));
+        }
+
+        public void Clear()
+        {
+            lineCollection.Clear();
+        }
+
+        public IEnumerable<CalcLine> Lines
+        {
+            get { return lineCollection; }
+        }
+
+        public class CalcLine
+        {
+            public Exercise Exercise { get; set; }
+            public Calculation Calculation { get; set; }
+            public int Quantity { get; set; }
         }
     }
 }

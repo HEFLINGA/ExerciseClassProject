@@ -4,8 +4,7 @@ namespace ExerciseProgram.Domain.Abstract
 {
     public interface ICalculation
     {
-        int CurrentSet { get; set; }
-        int WeightOnFiveByFiveSet(int exerciseMax, int currentSet);
+        int WeightOnFiveByFiveSet(int exerciseMax, int index);
         int WeightOnOneByThreeSet(int exerciseMax);
         int WeightOnOneByEightSet(int exerciseMax);
     }

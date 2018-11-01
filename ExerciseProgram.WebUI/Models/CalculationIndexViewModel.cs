@@ -6,9 +6,9 @@ using System.Web;
 
 namespace ExerciseProgram.WebUI.Models
 {
-    public class PlateIndexViewModel
+    public class CalculationIndexViewModel
     {
-        public Plate Plate { get; set; }
+        public Calculation Calculation { get; set; }
         public string ReturnUrl { get; set; }
     }
 }

@@ -3,16 +3,16 @@
 <div class="well">
     <h3>
         <strong>@Model.Name</strong>
-        <span class="pull-right label label-primary">@Model.ExerciseMax</span>
+        <span class="pull-right label label-default">@Model.ExerciseMax.ToString()</span>
         <strong class="pull-right">Exercise 5 Rep Max: </strong>
     </h3>
 
-    @using (Html.BeginForm("PlateWeight", "Plate"))
+    @using (Html.BeginForm("AddToCalculation", "Calculation"))
     {
         <div class="pull-right">
-            @Html.HiddenFor(x => x.ExerciseMax)
+            @Html.HiddenFor(x => x.ExerciseID)
             @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-            <input type="submit" class="btn btn-success" value="Check Plates" />
+            <input type="submit" class="btn btn-success" value="Add to Calculation" />
         </div>
     }
     <span class="lead"> @Model.Description</span>

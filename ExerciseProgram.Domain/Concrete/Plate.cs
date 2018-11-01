@@ -17,7 +17,7 @@ namespace ExerciseProgram.Domain.Concrete
             int totalOf25 = 0;
             int totalOf10 = 0;
             int totalOf5 = 0;
-            int totalOf2Point5 = 0;        
+            int totalOf2Point5 = 0;
 
             while (totalWeight != 0)
             {
@@ -26,7 +26,7 @@ namespace ExerciseProgram.Domain.Concrete
                     totalOf2Point5 += 2;
                     totalWeight -= 5;
                 }
-                if(totalOf2Point5 >= 4)
+                if (totalOf2Point5 >= 4)
                 {
                     totalOf5 += 2;
                     totalOf2Point5 = 0;
@@ -75,22 +75,5 @@ namespace ExerciseProgram.Domain.Concrete
 
             return $"Plates: {answer}";
         }
-
-        private Plates plate = new Plates();
-        
-        public void AddExercise(Exercise exercise)
-        {
-            this.plate.Exercise = exercise;
-        }
-
-        public string ComputeTotalPlates()
-        {
-            return PlateWeight(plate.Exercise.ExerciseMax);
-        }
-    }
-
-    public class Plates
-    {
-        public Exercise Exercise { get; set; }
     }
 }

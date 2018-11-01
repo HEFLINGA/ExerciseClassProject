@@ -131,37 +131,5 @@ namespace ExerciseProgram.Test
             Assert.AreEqual(pageInfo.TotalItems, 5);
             Assert.AreEqual(pageInfo.TotalPages, 2);
         }
-
-        [TestMethod]
-        public void Can_Filter()
-        {
-            Mock<IExerciseRepository> mock = new Mock<IExerciseRepository>();
-            mock.Setup(m => m.Exercises).Returns(new Exercise[]
-            {
-                new Exercise{ExerciseID=1,Name="E1",CategoryID=1},
-                new Exercise{ExerciseID=2,Name="E2",CategoryID=2},
-                new Exercise{ExerciseID=3,Name="E3",CategoryID=1},
-                new Exercise{ExerciseID=4,Name="E4",CategoryID=2},
-                new Exercise{ExerciseID=5,Name="E5",CategoryID=3}
-            });
-
-            Mock<ICategoryRepository> catMock = new Mock<ICategoryRepository>();
-            catMock.Setup(c => c.Categories).Returns(new Category[]
-            {
-                new Category{Name="Chest",CategoryID=1},
-                new Category{Name="Back",CategoryID=2},
-                new Category{Name="Legs",CategoryID=3}
-            });
-
-            ExerciseController controller = new ExerciseController(mock.Object);
-            controller.PageSize = 3;
-
-            Exercise[] result = ((ExercisesListViewModel)controller.List(catMock.Name="Back", 1).Model)
-                .Exercises.ToArray();
-
-            Assert.AreEqual(result.Length, 2);
-            Assert.IsTrue(result[0].Name == "E2" && result[0].CategoryID == 2);
-            Assert.IsTrue(result[1].Name == "E4" && result[1].CategoryID == 2);
-        }
     }
 }
