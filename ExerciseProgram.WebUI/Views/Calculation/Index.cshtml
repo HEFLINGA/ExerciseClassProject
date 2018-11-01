@@ -10,7 +10,7 @@
             <th>Quantity</th>
             <th>Exercise</th>
             <th class="text-right">Exercise Max</th>
-            <th class="text-right">Calculation</th>
+            <th class="text-right">Set weights for 5x5</th>
         </tr>
     </thead>
     <tbody>
@@ -21,19 +21,15 @@
                 <td class="text-left">@line.Exercise.Name</td>
                 <td class="text-right">@line.Exercise.ExerciseMax.ToString()</td>
                 <td class="text-right">
-                    @line.Exercise.ExerciseMax.ToString()
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        <div class="col-sm-1"></div>
+                        @Model.Calculation.ComputeTotal(i).ToString()
+                    }
                 </td>
             </tr>
         }
     </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="3" class="text-right">Total:</td>
-            <td class="text-right">
-                @Model.Calculation.ComputeTotal().ToString()
-            </td>
-        </tr>
-    </tfoot>
 </table>
 
 <div class="text-center">

@@ -30,6 +30,7 @@ namespace ExerciseProgram.WebUI.Controllers
             Exercise exercise = repository.Exercises
                 .FirstOrDefault(e => e.ExerciseID == exerciseId);
             Calculation calculation = new Calculation();
+            Plate plate = new Plate();
 
             if (exercise != null)
             {

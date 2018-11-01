@@ -94,9 +94,9 @@ namespace ExerciseProgram.Domain.Concrete
             lineCollection.RemoveAll(l => l.Exercise.ExerciseID == exercise.ExerciseID);
         }
 
-        public decimal ComputeTotal()
+        public decimal ComputeTotal(int index)
         {
-            return lineCollection.Sum(e => e.Calculation.WeightOnFiveByFiveSet(e.Exercise.ExerciseMax, 1));
+            return lineCollection.Sum(e => e.Calculation.WeightOnFiveByFiveSet(e.Exercise.ExerciseMax, index));
         }
 
         public void Clear()
