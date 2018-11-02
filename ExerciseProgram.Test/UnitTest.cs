@@ -23,19 +23,29 @@ namespace ExerciseProgram.Test
             {
                 Name = "Super Fly",
                 ExerciseMax = 225,
-                CategoryID = 1
+                CategoryID = 1,
+                BarWeight = 45
+            };
+            Exercise exercise2 = new Exercise
+            {
+                Name = "Dumbbell Curl",
+                ExerciseMax = 190,
+                CategoryID = 5,
+                BarWeight = 0
             };
 
             Assert.AreEqual(135
-                , cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 1));
+                , cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 1, exercise1.BarWeight));
             Assert.AreEqual(170
-                , cal.WeightOnFiveByFiveSet(245, 2));
+                , cal.WeightOnFiveByFiveSet(245, 2, 45));
             Assert.AreEqual(210
-                , cal.WeightOnFiveByFiveSet(265, 3));
+                , cal.WeightOnFiveByFiveSet(265, 3, 45));
             Assert.AreEqual(205
-                , cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 4));
+                , cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 4, exercise1.BarWeight));
             Assert.AreEqual(225
-                , cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 5));
+                , cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 5, exercise1.BarWeight));
+            Assert.AreEqual(190
+                , cal.WeightOnFiveByFiveSet(exercise2.ExerciseMax, 5, exercise2.BarWeight));
         }
 
         [TestMethod]
@@ -43,8 +53,8 @@ namespace ExerciseProgram.Test
         {
             Calculation cal = new Calculation();
 
-            Assert.AreEqual(235
-                , cal.WeightOnOneByThreeSet(225));
+            Assert.AreEqual(230
+                , cal.WeightOnOneByThreeSet(225, 45));
         }
 
         [TestMethod]
@@ -53,7 +63,7 @@ namespace ExerciseProgram.Test
             Calculation cal = new Calculation();
 
             Assert.AreEqual(180
-                , cal.WeightOnOneByEightSet(225));
+                , cal.WeightOnOneByEightSet(225, 45));
         }
 
         [TestMethod]
@@ -66,17 +76,19 @@ namespace ExerciseProgram.Test
                 Name = "Overhead Press",
                 Description = "SuperHard",
                 CategoryID = 4,
-                ExerciseMax = 205
+                ExerciseMax = 205,
+                BarWeight = 45
             };
             Exercise exercise2 = new Exercise
             {
-                ExerciseMax = 305
+                ExerciseMax = 305,
+                BarWeight =45
             };
             
-            Assert.AreEqual("Plates: 2x45 2x25 2x10 "
-                , plate.PlateWeight(cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 5)));
-            Assert.AreEqual("Plates: 6x45 2x2.5"
-                , plate.PlateWeight(cal.WeightOnOneByThreeSet(exercise2.ExerciseMax)));
+            Assert.AreEqual("2x45 2x25 2x10 "
+                , plate.PlateWeight(cal.WeightOnFiveByFiveSet(exercise1.ExerciseMax, 5, exercise1.BarWeight), exercise1.BarWeight));
+            Assert.AreEqual("4x45 2x25 2x10 2x5 2x2.5"
+                , plate.PlateWeight(cal.WeightOnOneByThreeSet(exercise2.ExerciseMax, exercise2.BarWeight), exercise2.BarWeight));
         }
     }
 

@@ -33,6 +33,7 @@ namespace ExerciseProgram.WebUI.DependencyResolution {
 					scan.With(new ControllerConvention());
                 });
             For<IExerciseRepository>().Use<EFExerciseRepository>();
+            For<ICategoryRepository>().Use<EFCategoryRepository>();
             //For<IExample>().Use<Example>();
         }
 

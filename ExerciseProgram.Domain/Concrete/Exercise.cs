@@ -15,10 +15,16 @@ namespace ExerciseProgram.Domain.Concrete
         [Display(Name ="Category")]
         public int CategoryID { get; set; }
 
+        [Required]
         public string Name { get; set; }
         public string Description { get; set; }
 
-        [Display(Name = "Max")]
+        [Required(ErrorMessage ="Bar Weight is Required. If not using a barbell (i.e. kettle bells, dumbbells etc..) put '0'")]
+        [Display(Name = "Bar Weight")]
+        public int BarWeight { get; set; }
+
+        [Required]
+        [Display(Name = "5x5 Max")]
         public int ExerciseMax { get; set; }
 
         public virtual Category Category { get; set; }

@@ -21,6 +21,9 @@
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.BarWeight)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ExerciseMax)
         </th>
         <th></th>
@@ -38,12 +41,15 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.BarWeight)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.ExerciseMax)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ExerciseID }) 
-            @Html.ActionLink("Details", "Details", new { id=item.ExerciseID }) 
-            @Html.ActionLink("Delete", "Delete", new { id=item.ExerciseID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ExerciseID })
+            @Html.ActionLink("Details", "Details", new { id = item.ExerciseID })
+            @Html.ActionLink("Delete", "Delete", new { id = item.ExerciseID })
         </td>
     </tr>
 }

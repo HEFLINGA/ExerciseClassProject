@@ -8,6 +8,6 @@ namespace ExerciseProgram.Domain.Abstract
 {
     public interface IPlate
     {
-        string PlateWeight(int totalWeight);
+        string PlateWeight(int totalWeight, int barWeight);
     }
 }
