@@ -82,7 +82,7 @@ namespace ExerciseProgram.WebUI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ExerciseID,CategoryID,Name,Description,ExerciseMax")] Exercise exercise)
+        public ActionResult Create([Bind(Include = "ExerciseID,CategoryID,Name,Description,BarWeight,ExerciseMax")] Exercise exercise)
         {
             try
             {
@@ -123,7 +123,7 @@ namespace ExerciseProgram.WebUI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ExerciseID,CategoryID,Name,Description,ExerciseMax")] Exercise exercise)
+        public ActionResult Edit([Bind(Include = "ExerciseID,CategoryID,Name,Description,BarWeight,ExerciseMax")] Exercise exercise)
         {
             if (ModelState.IsValid)
             {
