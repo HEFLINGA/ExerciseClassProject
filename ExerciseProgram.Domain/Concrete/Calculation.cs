@@ -92,7 +92,7 @@ namespace ExerciseProgram.Domain.Concrete
         }
         public int WeightOnOneByThreeSet(int exerciseMax, int barWeight)
         {
-            if (barWeight > 0)
+            if (barWeight >= 45)
             {
                 currentSetWeight = 0;
                 currentSetWeight = exerciseMax;
