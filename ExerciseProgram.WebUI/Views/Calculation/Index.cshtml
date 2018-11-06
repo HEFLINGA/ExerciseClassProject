@@ -3,64 +3,66 @@
     ViewBag.Title = "Exercise Program Sets: ";
 }
 
-<h2>Your Sets</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Exercise</th>
-            <th class="text-right">Exercise Max</th>
-            <th class="text-right">Sets</th>
-            <th class="text-right">Set weight for 1x8</th>
-            <th class="text-right">Set weight for 1x3</th>
-            <th class="text-right">Set weights for 5x5</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var line in Model.Calculation.Lines)
-        {
+<h2>Calculations:</h2>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
             <tr>
-                <td class="text-left">@line.Exercise.Name</td>
-                <td class="text-right">@line.Exercise.ExerciseMax.ToString()</td>
-                <td class="text-right">
-                    @for (int i = 1; i <= 5; i++)
-                    {
-                        <div></div>
-                        @:Set @i:
-                    }
-                </td>
-                <td class="text-right">@Model.Calculation.ComputeTotal().ToString()</td>
-                <td class="text-right">@Model.Calculation.ComputeTotalOfThree().ToString()</td>
-                <td class="text-right">
-                    @for (int i = 1; i <= 5; i++)
-                    {
-                        <div></div>
-                        @Model.Calculation.ComputeTotal(i).ToString()
-                    }
-                </td>
+                <th>Exercise</th>
+                <th class="text-right">Exercise Max</th>
+                <th class="text-right">Sets</th>
+                <th class="text-right">Set weight for 1x8</th>
+                <th class="text-right">Set weight for 1x3</th>
+                <th class="text-right">Set weights for 5x5</th>
             </tr>
-            <tr>
-                <td class="text-left">Plates for @line.Exercise.Name: </td>
-                <td class="text-right">@line.Plate.PlateWeight(line.Exercise.ExerciseMax, line.Exercise.BarWeight).ToString()</td>
-                <td class="text-right">
-                    @for (int i = 1; i <= 5; i++)
-                    {
-                        <div></div>
-                        @:Set @i:
-                    }
-                </td>
-                <td class="text-right">@line.Plate.PlateWeight((int)Model.Calculation.ComputeTotal(), line.Exercise.BarWeight).ToString()</td>
-                <td class="text-right">@line.Plate.PlateWeight((int)Model.Calculation.ComputeTotalOfThree(), line.Exercise.BarWeight).ToString()</td>
-                <td class="text-right">
-                    @for (int i = 1; i <= 5; i++)
-                    {
-                        <div></div>
-                        @line.Plate.PlateWeight((int)Model.Calculation.ComputeTotal(i), line.Exercise.BarWeight).ToString()
-                    }
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var line in Model.Calculation.Lines)
+            {
+                <tr>
+                    <td class="text-left">@line.Exercise.Name</td>
+                    <td class="text-right">@line.Exercise.ExerciseMax.ToString()</td>
+                    <td class="text-right">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <div></div>
+                            @:Set @i:
+                        }
+                    </td>
+                    <td class="text-right">@Model.Calculation.ComputeTotal().ToString()</td>
+                    <td class="text-right">@Model.Calculation.ComputeTotalOfThree().ToString()</td>
+                    <td class="text-right">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <div></div>
+                            @Model.Calculation.ComputeTotal(i).ToString()
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left">Plates for @line.Exercise.Name: </td>
+                    <td class="text-right">@line.Plate.PlateWeight(line.Exercise.ExerciseMax, line.Exercise.BarWeight).ToString()</td>
+                    <td class="text-right">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <div></div>
+                            @:Set @i:
+                        }
+                    </td>
+                    <td class="text-right">@line.Plate.PlateWeight((int)Model.Calculation.ComputeTotal(), line.Exercise.BarWeight).ToString()</td>
+                    <td class="text-right">@line.Plate.PlateWeight((int)Model.Calculation.ComputeTotalOfThree(), line.Exercise.BarWeight).ToString()</td>
+                    <td class="text-right">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <div></div>
+                            @line.Plate.PlateWeight((int)Model.Calculation.ComputeTotal(i), line.Exercise.BarWeight).ToString()
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 <div class="text-center">
     <a class="btn btn-primary" href="@Model.ReturnUrl">Back To All Exercises</a>
 </div>

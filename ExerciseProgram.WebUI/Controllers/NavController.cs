@@ -26,5 +26,16 @@ namespace ExerciseProgram.WebUI.Controllers
                 .OrderBy(x => x);
             return PartialView(categories);
         }
+
+        public PartialViewResult AddExercisesMenu(string addExercisesCategory = null)
+        {
+            ViewBag.SelectedCategory = addExercisesCategory;
+
+            IEnumerable<string> addExercisesCategories = repository.Exercises
+                .Select(x => x.Category.Name)
+                .Distinct()
+                .OrderBy(x => x);
+            return PartialView(addExercisesCategories);
+        }
     }
 }

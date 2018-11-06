@@ -16,7 +16,6 @@ namespace ExerciseProgram.WebUI.Controllers
     public class ExerciseController : Controller
     {
         private ExerciseContext db = new ExerciseContext();
-        // TODO: CURRENT TRIAL CHANGES
         private IExerciseRepository exerciseRepository;
         public int PageSize = 4;
 

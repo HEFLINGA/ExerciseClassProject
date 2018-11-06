@@ -12,7 +12,7 @@
         <div class="pull-right">
             @Html.HiddenFor(x => x.ExerciseID)
             @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-            <input type="submit" class="btn btn-success" value="Add to Calculation" />
+            <input type="submit" class="btn btn-success" value="Calculate" />
         </div>
     }
     <span class="lead"> @Model.Description</span>

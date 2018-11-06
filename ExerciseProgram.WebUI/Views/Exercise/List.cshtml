@@ -6,14 +6,13 @@
     <div id="categories">
         @Html.Action("Menu", "Nav")
     </div>
-
+    
     <div class="btn-group-justified">
         @foreach (var e in Model.Exercises)
         {
             @Html.Partial("ExerciseSummary", e)
         }
     </div>
-
 
     <div class="btn-group pull-right">
         @Html.PageLinks(Model.PagingInfo, x => Url.Action("List",

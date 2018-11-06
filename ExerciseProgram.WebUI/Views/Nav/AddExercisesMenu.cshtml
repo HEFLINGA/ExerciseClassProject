@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<string>
 
 <div class="btn btn-group">
-    @Html.ActionLink("All", "List", "Exercise", null,
+    @Html.ActionLink("All", "Index", "Exercise", null,
     new { @class = "btn btn-info" })
 
     @foreach (var link in Model)
@@ -9,7 +9,7 @@
         @Html.RouteLink(link, new
         {
             controller = "Exercise",
-            action = "List",
+            action = "Index",
             category = link,
             page = 1
         }, new
