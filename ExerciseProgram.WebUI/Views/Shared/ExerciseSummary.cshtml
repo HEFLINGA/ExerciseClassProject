@@ -1,6 +1,11 @@
 ﻿@model ExerciseProgram.Domain.Concrete.Exercise
 
 <div class="well">
+
+    <div class="pull-right">
+        @Html.ActionLink("(Edit Max)", "Edit", new { id = Model.ExerciseID })
+    </div>
+
     <h3>
         <strong>@Model.Name</strong>
         <span class="pull-right label label-default">@Model.ExerciseMax.ToString()</span>
@@ -15,5 +20,7 @@
             <input type="submit" class="btn btn-success" value="Calculate" />
         </div>
     }
+
     <span class="lead"> @Model.Description</span>
+
 </div> 

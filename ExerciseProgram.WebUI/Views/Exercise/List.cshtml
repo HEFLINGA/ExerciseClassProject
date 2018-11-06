@@ -2,8 +2,9 @@
 @{
     ViewBag.Title = "Exercises";
 }
+<h1 class="text-center">Exercises</h1>
 <div>
-    <div id="categories">
+    <div id="categories" class="text-center">
         @Html.Action("Menu", "Nav")
     </div>
     
@@ -20,5 +21,6 @@
     </div>
 </div>
 <p>
-    @Html.ActionLink("Back to Table", "Index")
+    @Html.ActionLink("Exercise Table", "Index") | 
+    @Html.ActionLink("Exercise Categories", "Index", "Category")
 </p>

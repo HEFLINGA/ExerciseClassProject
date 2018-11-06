@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Exercises</h2>
+<h2>Exercise Database</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -60,5 +60,6 @@
     </table>
 </div>
 <p>
-    @Html.ActionLink("List", "List")
+    @Html.ActionLink("Exercise List", "List") |
+    @Html.ActionLink("Exercise Categories", "Index", "Category")
 </p>
