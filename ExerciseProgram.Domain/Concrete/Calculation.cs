@@ -102,13 +102,23 @@ namespace ExerciseProgram.Domain.Concrete
             }
             else
             {
-                currentSetWeight = 0;
-                currentSetWeight = exerciseMax;
-                currentSetWeight += exerciseMax * 5 / 100;
-                currentSetWeight = nearestFive.RoundTo(currentSetWeight, 10);
-                return currentSetWeight;
-            }
-            
+                if (exerciseMax < 100 && barWeight < 35)
+                {
+                    currentSetWeight = 0;
+                    currentSetWeight = exerciseMax;
+                    currentSetWeight += exerciseMax * 15 / 100;
+                    currentSetWeight = nearestFive.RoundTo(currentSetWeight, 10);
+                    return currentSetWeight;
+                }
+                else
+                {
+                    currentSetWeight = 0;
+                    currentSetWeight = exerciseMax;
+                    currentSetWeight += exerciseMax * 5 / 100;
+                    currentSetWeight = nearestFive.RoundTo(currentSetWeight, 10);
+                    return currentSetWeight;
+                }                
+            }            
         }
         public int WeightOnOneByEightSet(int exerciseMax, int barWeight)
         {
