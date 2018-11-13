@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciseProgram.Domain", "E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{F5DB7D72-3537-464F-A31A-4D96B1068B3B}"
 	ProjectSection(SolutionItems) = preProject
-		docs\ProjectStep9SRS.md = docs\ProjectStep9SRS.md
+		docs\design\ProjectStep9SRS.md = docs\design\ProjectStep9SRS.md
 		docs\README.md = docs\README.md
 	EndProjectSection
 EndProject
