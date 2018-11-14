@@ -9,7 +9,7 @@
     <h3>
         <strong>@Model.Name</strong>
         <span class="pull-right label label-default">@Model.ExerciseMax.ToString()</span>
-        <strong class="pull-right">Exercise 5 Rep Max: </strong>
+        <strong class="pull-right">@Model.Name 5 Rep Max: </strong>
     </h3>
 
     @using (Html.BeginForm("AddToCalculation", "Calculation"))
