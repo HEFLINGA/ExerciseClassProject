@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ExerciseProgram.Domain.DAL
 {
-    public class ProgramInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ExerciseContext>
+    public class ProgramInitializer : System.Data.Entity.DropCreateDatabaseAlways<ExerciseContext>
     {
         protected override void Seed(ExerciseContext context)
         {
