@@ -12,6 +12,8 @@ namespace ExerciseProgram.Domain.Concrete
         // Custom code to make the math work for getting weight per set
         GoToNearestFive nearestFive = new GoToNearestFive();
         private int currentSetWeight = 0;
+
+        // Code to do math for set weight
         public int WeightOnFiveByFiveSet(int exerciseMax, int currentSet, int barWeight)
         {
             currentSetWeight = 0;
@@ -164,6 +166,8 @@ namespace ExerciseProgram.Domain.Concrete
         {
             lineCollection.RemoveAll(l => l.Exercise.ExerciseID == exercise.ExerciseID);
         }
+
+        // Code to return totals
         public decimal ComputeTotal(int index)
         {
             return lineCollection.Sum(e => e.Calculation.WeightOnFiveByFiveSet(e.Exercise.ExerciseMax, index, e.Exercise.BarWeight));
