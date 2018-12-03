@@ -8,7 +8,7 @@ namespace ExerciseProgram.Domain.Concrete
 {
     public class GoToNearestFive
     {
-        // Code for the idea behind this Rounder was found here:
+        // Code for the idea behind this Number Rounder was found here:
         // https://codereview.stackexchange.com/questions/109319/round-to-specified-int
 
         public int RoundTo(int value, int roundTo)
