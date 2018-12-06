@@ -1,12 +1,22 @@
 ﻿@model ExerciseProgram.Domain.Concrete.Exercise
 
-<div class="well">
+<style>
+    .BackgroundStuff {
+        opacity: 0.9;
+    }
 
-    <div class="pull-right">
+    .ForgroundStuff{
+        opacity: 1;
+    }
+</style>
+
+<div class="well BackgroundStuff">
+
+    <div class="pull-right ForgroundStuff">
         @Html.ActionLink("(Edit Max)", "Edit", new { id = Model.ExerciseID })
     </div>
 
-    <h3>
+    <h3 class="ForgroundStuff">
         <strong>@Model.Name</strong>
         <span class="pull-right label label-default">@Model.ExerciseMax.ToString()</span>
         <strong class="pull-right">@Model.Name 5 Rep Max: </strong>
@@ -14,13 +24,13 @@
 
     @using (Html.BeginForm("AddToCalculation", "Calculation"))
     {
-        <div class="pull-right">
+        <div class="pull-right ForgroundStuff">
             @Html.HiddenFor(x => x.ExerciseID)
             @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
             <input type="submit" class="btn btn-success" value="Calculate" />
         </div>
     }
 
-    <span class="lead"> @Model.Description</span>
+    <span class="lead ForgroundStuff"> @Model.Description</span>
 
 </div> 
