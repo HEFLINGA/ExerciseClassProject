@@ -15,7 +15,7 @@ namespace ExerciseProgram.WebUI.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "A little information behind the method I am using, and/or working on using for this Application:";
+            ViewBag.Message = "Information behind the method I am using for this Application:";
 
             return View();
         }
